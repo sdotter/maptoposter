@@ -739,18 +739,18 @@ def create_poster(
     else:
         font_attr = FontProperties(family="monospace", size=8)
 
-    ax.text(
-        0.98,
-        0.02,
-        "© OpenStreetMap contributors",
-        transform=ax.transAxes,
-        color=THEME["text"],
-        alpha=0.5,
-        ha="right",
-        va="bottom",
-        fontproperties=font_attr,
-        zorder=11,
-    )
+    # ax.text(
+    #     0.98,
+    #     0.02,
+    #     "© OpenStreetMap contributors",
+    #     transform=ax.transAxes,
+    #     color=THEME["text"],
+    #     alpha=0.5,
+    #     ha="right",
+    #     va="bottom",
+    #     fontproperties=font_attr,
+    #     zorder=11,
+    # )
 
     # 5. Save
     print(f"Saving to {output_file}...")
@@ -764,7 +764,7 @@ def create_poster(
 
     # DPI matters mainly for raster formats
     if fmt == "png":
-        save_kwargs["dpi"] = 300
+        save_kwargs["dpi"] = 1200
 
     plt.savefig(output_file, format=fmt, **save_kwargs)
 
